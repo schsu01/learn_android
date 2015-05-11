@@ -1,0 +1,8 @@
+<TableLayout android:id="@+id/lay_ooxx"
+             xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:stretchColumns="*">
+  <Button android:id="@+id/btn_reset" android:text="@string/btn_reset"/>
+  <!--<TableRow><Button android:text="O"/><Button android:text="X"/><Button/></TableRow>-->
+</TableLayout>
