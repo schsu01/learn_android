@@ -2,10 +2,18 @@
   <string name="app_name">LearnAndroid</string>
   <string name="action_settings">Settings</string>
   <string name="app1_ooxx">1. 圈圈叉叉</string>
-  <string name="btn_reset">Reset</string>
+  <string name="btn_reset">New Game</string>
+  <string-array name="name_ox">
+    <item>O</item>
+    <item>X</item>
+  </string-array>
+  <string name="msg_win">Winner is Player&lt;%1$s&gt; !</string>
+  <string name="msg_draw">Draw Game...</string>
   <string name="app2_list">2. 血糖記錄</string>
-  <string name="opt_before">飯前</string>
-  <string name="opt_after">飯後</string>
+  <string-array name="opt_flag">
+    <item>飯前</item>
+    <item>飯後</item>
+  </string-array>
   <string name="btn_save">儲存</string>
   <string name="app3_calc">3. 記算機(未完成)</string>
 </resources>
