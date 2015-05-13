@@ -19,7 +19,7 @@ public class Activity3_Calc extends Activity {
     final EditText txt = (EditText) findViewById(R.id.txt_ans);
     txt.setKeyListener(null);
     this.txt = txt.getText();
-    final ViewGroup table = (ViewGroup) findViewById(R.id.lay_calc);
+    final ViewGroup table = (ViewGroup) findViewById(R.id.lay_main);
     for (final Cmd[] cmds : CMDS) {
       final TableRow row = new TableRow(this);
       for (final Cmd cmd : cmds) row.addView(cmd.newButton());

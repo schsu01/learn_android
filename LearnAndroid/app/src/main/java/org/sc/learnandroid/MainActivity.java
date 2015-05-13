@@ -6,28 +6,26 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+  private static final Class[] APP_KLASS = {Activity1_OOXX.class, Activity2_List.class,
+    Activity3_Calc.class, Activity4_Draw.class};
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
-    setRedirectTo(R.id.app1_ooxx, Activity1_OOXX.class);
-    setRedirectTo(R.id.app2_list, Activity2_List.class);
-    setRedirectTo(R.id.app3_calc, Activity3_Calc.class);
+    final ListView list = (ListView) findViewById(R.id.list);
+    list.setOnItemClickListener(this);
+    list.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, getResources().getTextArray(R.array.app_list)));
   }
 
-  private void setRedirectTo(int id, Class klass) {
-    final View view = findViewById(id);
-    view.setTag(klass);
-    view.setOnClickListener(this);
-  }
-
-  @Override
-  public void onClick(View v) {
+  public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
     final Intent intent = new Intent();
-    intent.setClass(this, (Class) v.getTag());
+    intent.setClass(this, APP_KLASS[position]);
     startActivity(intent);
   }
 
@@ -41,4 +39,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
   public boolean onOptionsItemSelected(MenuItem item) {
     return item.getItemId() == R.id.action_settings || super.onOptionsItemSelected(item);
   }
+
 }

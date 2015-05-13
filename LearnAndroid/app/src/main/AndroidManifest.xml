@@ -14,6 +14,7 @@
     <activity android:name=".Activity1_OOXX"/>
     <activity android:name=".Activity2_List"/>
     <activity android:name=".Activity3_Calc"/>
+    <activity android:name=".Activity4_Draw"/>
   </application>
 
 </manifest>

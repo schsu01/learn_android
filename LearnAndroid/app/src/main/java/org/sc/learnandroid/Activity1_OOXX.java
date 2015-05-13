@@ -36,7 +36,7 @@ public class Activity1_OOXX extends Activity {
     final Resources res = getResources();
     final String[] names = res.getStringArray(R.array.name_ox);
     final String msgWin = res.getString(R.string.msg_win), msgDraw = res.getString(R.string.msg_draw);
-    final ViewGroup table = (ViewGroup) findViewById(R.id.lay_ooxx);
+    final ViewGroup table = (ViewGroup) findViewById(R.id.lay_main);
     for (int i = 0, k = 0; i < 3; i++) {
       final TableRow row = new TableRow(this);
       for (int j = 0; j < 3; j++) {
