@@ -58,10 +58,9 @@ public class Activity4_Draw extends Activity {
           case MotionEvent.ACTION_MOVE:
             final float x = lastX = event.getX(), y = lastY = event.getY(), dx, dy;
             final int px = (int) (x / refW + 0.5f), py = (int) (y / refH + 0.5f), id = py * nX - nX + px - 1;
-            if (null != (null != last && last[2] == id || px < 1 || px > nX || py < 1 || py > nY ||
-              (dx = x - px * refW) * dx + (dy = y - py * refH) * dy > minRsq ? //根據敏感度(minRsq)找最近點
-              null : (last = new int[]{px - 1, py - 1, id}))) {
-              hist.add(last);
+            if ((null == last || last[2] != id) && px >= 1 && px <= nX && py >= 1 && py <= nY &&
+              (dx = x - px * refW) * dx + (dy = y - py * refH) * dy <= minRsq &&//x^2+y^2<r^2
+              hist.add(last = new int[]{px - 1, py - 1, id})) {//根據敏感度(minRsq)找最近點(last)
               final float nx = xs[last[0]], ny = ys[last[1]];
               if (link.isEmpty()) link.moveTo(nx, ny);
               else link.lineTo(nx, ny);
