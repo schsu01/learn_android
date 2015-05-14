@@ -1,6 +1,7 @@
 package org.sc.util;
 
 import android.content.Context;
+import android.graphics.Paint;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioButton;
@@ -26,4 +27,11 @@ public class ViewUtil {
     }
   }
 
+  public static Paint newPaint(Paint.Style style, float width, int color) {
+    final Paint result = new Paint();
+    result.setStyle(style);
+    result.setStrokeWidth(width);
+    result.setColor(color);
+    return result;
+  }
 }
