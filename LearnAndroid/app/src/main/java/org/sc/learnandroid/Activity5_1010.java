@@ -85,7 +85,7 @@ public class Activity5_1010 extends Activity {
         for (int x = 0, bx, by, color; x < 5; x++)
           for (int y = 0; y < 5; y++)
             if (0 != (color = move.getPixel(x, y))) {
-              if ((bx = x + dx) < 0 || bx > 9 || (by = y + dy) < 0 || by > 9 || 0 == backBMP.getPixel(bx, by))
+              if ((bx = x + dx) < 0 || bx > 9 || (by = y + dy) < 0 || by > 9 || 0 != backBMP.getPixel(bx, by))
                 return oriRect[moving];//not placeable
               changeX.add(bx);
               changeY.add(by);
