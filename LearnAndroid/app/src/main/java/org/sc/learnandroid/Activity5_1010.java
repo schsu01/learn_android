@@ -84,13 +84,13 @@ public class Activity5_1010 extends Activity {
         final List<int[]> copy = new ArrayList<>();
         for (int x = 0, bx, by, color; x < 5; x++)
           for (int y = 0; y < 5; y++)
-            if (0 != (color = move.getPixel(x, y)) && (bx = x + dx) >= 0 && bx <= 9 && (by = y + dy) >= 0 && by <= 9)
-              if (0 != backBMP.getPixel(bx, by)) return oriRect[moving];//not placeable
-              else {
-                changeX.add(bx);
-                changeY.add(by);
-                copy.add(new int[]{bx, by, color});
-              }
+            if (0 != (color = move.getPixel(x, y))) {
+              if ((bx = x + dx) < 0 || bx > 9 || (by = y + dy) < 0 || by > 9 || 0 == backBMP.getPixel(bx, by))
+                return oriRect[moving];//not placeable
+              changeX.add(bx);
+              changeY.add(by);
+              copy.add(new int[]{bx, by, color});
+            }
         for (final int[] xyc : copy) backBMP.setPixel(xyc[0], xyc[1], xyc[2]);
 checkX:
         for (final int x : changeX.toArray(new Integer[changeX.size()]))
