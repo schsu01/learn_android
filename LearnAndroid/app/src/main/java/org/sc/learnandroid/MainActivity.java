@@ -12,7 +12,7 @@ import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
   private static final Class[] APP_KLASS = {Activity1_OOXX.class, Activity2_List.class,
-    Activity3_Calc.class, Activity4_Draw.class};
+      Activity3_Calc.class, Activity4_Draw.class, Activity5_1010.class};
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
